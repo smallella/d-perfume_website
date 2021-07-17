@@ -1,0 +1,853 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.d-none-pc {
+  display: none;
+}
+@media (max-width: 767px) {
+  .d-none-pc {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .d-none-phone {
+    display: none;
+  }
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+@media (max-width: 376px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+a:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #AC8A46;
+}
+
+span.label {
+  line-height: 1.2;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+@media (max-width: 376px) {
+  .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.mb1 {
+  margin-bottom: 8px;
+}
+
+.mb2 {
+  margin-bottom: 16px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .logo {
+  width: 128px;
+  height: 38px;
+  background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/d’Perfume.png);
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .header .logo {
+    margin: 9px 0;
+  }
+}
+.header .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header .menu a {
+  padding: 16px;
+  line-height: 1.2;
+  font-weight: normal;
+  font-size: 20px;
+  color: #8D8D8D;
+  position: relative;
+}
+.header .menu a:hover {
+  color: #AC8A46;
+}
+.header .menu a .material-icons {
+  margin-right: 3px;
+  vertical-align: bottom;
+}
+.header .menu li:nth-child(4) a {
+  padding-right: 0;
+}
+@media (max-width: 767px) {
+  .header .menu {
+    background: #8D8D8D;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    max-height: 0px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    top: 57px;
+    right: 0;
+    left: 0;
+    background: #AC8A46;
+  }
+  .header .menu li {
+    padding: 12px;
+    border-bottom: 2px solid #FFFFFF;
+  }
+  .header .menu li a {
+    color: #FFFFFF;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .header .menu li a:hover {
+    color: #000000;
+  }
+  .header .active {
+    max-height: 550px;
+  }
+  .header .menu-pad {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header .cart, .header .showmenu {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+  .header .cart {
+    color: #8D8D8D;
+    position: relative;
+    margin-right: 20px;
+  }
+  .header .material-icons {
+    font-size: 20px;
+  }
+  .header em {
+    line-height: 1.17;
+    font-size: 12px;
+    position: absolute;
+    top: -20%;
+    right: -30%;
+    padding: 0px 4px;
+    border-radius: 7px;
+    background-color: #916000;
+    color: #FFFFFF;
+    text-align: center;
+  }
+}
+
+.banner {
+  background: url(../images/banner.jpg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 870px;
+  margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .banner {
+    height: 600px;
+  }
+}
+@media (max-width: 376px) {
+  .banner {
+    background: url(../images/index1-1.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 40px;
+    height: 480px;
+  }
+}
+.banner .container {
+  position: relative;
+}
+.banner .textBlock {
+  color: #FFFFFF;
+  position: absolute;
+  top: 295px;
+  right: 0;
+  max-width: 445px;
+}
+@media (max-width: 767px) {
+  .banner .textBlock {
+    top: 101px;
+    padding: 0 15px;
+  }
+}
+.banner .textBlock h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+@media (max-width: 376px) {
+  .banner .textBlock h1 {
+    font-size: 32px;
+  }
+}
+.banner .textBlock p {
+  font-size: 24px;
+  font-weight: normal;
+}
+@media (max-width: 376px) {
+  .banner .textBlock p {
+    font-size: 20px;
+  }
+}
+.banner .textBlock .bannerBtn {
+  width: 79%;
+  height: 60px;
+  color: #FFFFFF;
+  background: transparent;
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 16px;
+  padding: 10px 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+}
+@media (max-width: 767px) {
+  .banner .textBlock .bannerBtn {
+    width: 100%;
+  }
+}
+.banner .textBlock .bannerBtn:hover {
+  background: #FFFFFF4D;
+}
+
+.footer {
+  background: #916000;
+  padding-top: 20px;
+  padding-bottom: 22px;
+}
+.footer .footerContent {
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer .footerContent .footerInformation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 767px) {
+  .footer .footerContent .footerInformation {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media (max-width: 320px) {
+  .footer .footerContent .footerInformation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.footer .footerContent .footerInformation .footerLogo {
+  width: 128px;
+  height: 38px;
+  background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/d’Perfumewhite.png?raw=true);
+  background-repeat: no-repeat;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+.footer .footerContent .footerInformation span {
+  font-size: 14px;
+  margin-left: 20px;
+}
+@media (max-width: 767px) {
+  .footer .footerContent .footerInformation span {
+    margin-left: 0;
+  }
+}
+.footer .footerContent .footerWebLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer .footerContent .footerWebLink a {
+  font-size: 20px;
+  padding: 0px 18px;
+  color: #FFFFFF;
+}
+.footer .footerContent .footerWebLink a:hover {
+  color: #000000;
+}
+@media (max-width: 767px) {
+  .footer .footerContent .footerWebLink li {
+    display: none;
+  }
+}
+
+.productIntro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 15px;
+  margin-bottom: 60px;
+}
+@media (max-width: 376px) {
+  .productIntro {
+    margin-bottom: 40px;
+  }
+}
+.productIntro .productContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 555px;
+}
+@media (max-width: 1200px) {
+  .productIntro .productContent {
+    height: 380px;
+  }
+}
+@media (max-width: 767px) {
+  .productIntro .productContent {
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 32px;
+  }
+}
+.productIntro .productContent4 {
+  height: 1080px;
+}
+@media (max-width: 767px) {
+  .productIntro .productContent4 {
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.productIntro .rowReverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+@media (max-width: 376px) {
+  .productIntro .rowReverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.productIntro .productImg {
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  .productIntro .productImg {
+    width: 100%;
+    height: 600px;
+  }
+}
+@media (max-width: 376px) {
+  .productIntro .productImg {
+    height: 350px;
+  }
+}
+.productIntro .img1 {
+  background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index2.jpg?raw=true);
+}
+.productIntro .img2 {
+  background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index3.png?raw=true);
+}
+.productIntro .img3 {
+  background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index4.jpg?raw=true);
+  background-position: left;
+}
+.productIntro .img4 {
+  background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index5.jpg?raw=true);
+}
+@media (max-width: 767px) {
+  .productIntro .img4 {
+    height: 680px;
+  }
+}
+.productIntro .productText {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 105px;
+}
+@media (max-width: 1200px) {
+  .productIntro .productText {
+    padding: 0 65px;
+  }
+}
+@media (max-width: 767px) {
+  .productIntro .productText {
+    width: 100%;
+    padding: 0;
+  }
+}
+.productIntro .productText h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+@media (max-width: 376px) {
+  .productIntro .productText h2 {
+    margin-bottom: 0;
+  }
+}
+.productIntro .productText p {
+  font-size: 20px;
+  font-weight: normal;
+}
+@media (max-width: 376px) {
+  .productIntro .productText p {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+}
+.productIntro .productText a {
+  color: #AC8A46;
+  font-family: "PingFang TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+}
+.productIntro .productText a:hover {
+  color: #000000c4;
+}
+.productIntro .productText4 h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.productIntro .productText4 p {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 52px;
+}
+@media (max-width: 376px) {
+  .productIntro .productText4 p {
+    margin-bottom: 20px;
+  }
+}
+.productIntro .productText4 .trainBtn {
+  width: 350px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 16px;
+  padding: 16px 0;
+  border: 2px solid #000000;
+  border-radius: 30px;
+  background: #FFFFFF;
+}
+@media (max-width: 1200px) {
+  .productIntro .productText4 .trainBtn {
+    width: 250px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .productIntro .productText4 .trainBtn {
+    width: 100%;
+  }
+}
+.productIntro .productText4 .trainBtn:hover {
+  background: #0000000D;
+  opacity: 1;
+}
+
+.topProduct {
+  background: #0000000D;
+  padding: 40px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .topProduct {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 376px) {
+  .topProduct {
+    padding-top: 40px;
+  }
+}
+.topProduct .topProductContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (max-width: 767px) {
+  .topProduct .topProductContent {
+    margin-bottom: 32px;
+  }
+}
+.topProduct .topProductContent .topProductImg {
+  width: 350px;
+  height: 540px;
+  margin-bottom: 8px;
+}
+@media (max-width: 767px) {
+  .topProduct .topProductContent .topProductImg {
+    width: 100%;
+  }
+}
+@media (max-width: 376px) {
+  .topProduct .topProductContent .topProductImg {
+    width: 344px;
+    height: 350px;
+  }
+}
+.topProduct .topProductContent h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+@media (max-width: 376px) {
+  .topProduct .topProductContent h4 {
+    margin-bottom: 4px;
+  }
+}
+.topProduct .topProductContent h4, .topProduct .topProductContent span {
+  font-weight: 300;
+}
+.topProduct .topProductContent span {
+  color: #8D8D8D;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+.topProduct .topProductContent .filterGray {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.topProduct .topProductContent .filterGray h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.productRecycle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 60px 15px;
+}
+@media (max-width: 767px) {
+  .productRecycle {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 376px) {
+  .productRecycle {
+    padding: 40px 15px;
+  }
+}
+.productRecycle .recycleProductImg {
+  width: 65%;
+  height: 520px;
+  background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index9.jpg?raw=true);
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 767px) {
+  .productRecycle .recycleProductImg {
+    width: 100%;
+  }
+}
+.productRecycle .productRecycleContent {
+  padding: 82px 0px;
+  width: 30%;
+  font-size: 20px;
+  font-weight: 300;
+}
+@media (max-width: 767px) {
+  .productRecycle .productRecycleContent {
+    width: 100%;
+  }
+}
+@media (max-width: 376px) {
+  .productRecycle .productRecycleContent {
+    padding: 0;
+  }
+}
+.productRecycle .productRecycleContent h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+@media (max-width: 1200px) {
+  .productRecycle .productRecycleContent h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 376px) {
+  .productRecycle .productRecycleContent h2 {
+    font-size: 32px;
+  }
+}
+.productRecycle .productRecycleContent p {
+  font-size: 16px;
+}
+@media (max-width: 376px) {
+  .productRecycle .productRecycleContent h3, .productRecycle .productRecycleContent p {
+    margin-bottom: 8px;
+  }
+}
+.productRecycle .productRecycleContent a {
+  font-size: 16px;
+  color: #AC8A46;
+  font-family: "PingFang TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+}
+.productRecycle .productRecycleContent a:hover {
+  color: #000000c4;
+}
+
+.subscribe {
+  font-weight: 500;
+  color: #8D8D8D;
+  background-image: url(../images/subscribe.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 376px) {
+  .subscribe {
+    background-image: url(../images/subscribe_sm.jpg);
+  }
+}
+.subscribe .contactInformation {
+  padding-top: 312px;
+  padding-bottom: 112px;
+  padding-left: 21%;
+  font-size: 32px;
+  font-family: "PingFang TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .subscribe .contactInformation {
+    padding-left: 10%;
+  }
+}
+@media (max-width: 376px) {
+  .subscribe .contactInformation {
+    padding-left: 3%;
+  }
+}
+.subscribe h2 {
+  margin-bottom: 20px;
+}
+@media (max-width: 376px) {
+  .subscribe h2 {
+    font-size: 32px;
+  }
+}
+.subscribe .subscribeBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.subscribe .subscribeBar input {
+  width: 219px;
+  padding: 0px 15px;
+  border: 2px solid #916000;
+  border-radius: 4px 0px 0px 4px;
+  background-color: #FFFFFF;
+  color: #8D8D8D;
+}
+@media (max-width: 767px) {
+  .subscribe .subscribeBar input {
+    width: 100%;
+  }
+}
+.subscribe .subscribeBar button {
+  border: none;
+  background: #916000;
+  color: white;
+  padding: 20px 26px;
+  border-radius: 0px 4px 4px 0px;
+  cursor: pointer;
+}
+.subscribe .subscribeBar button:hover {
+  background: #6C4700;
+  color: #AC8A46;
+}

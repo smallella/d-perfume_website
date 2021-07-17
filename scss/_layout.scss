@@ -1,0 +1,225 @@
+//頁首
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo{
+        width: 128px;
+        height: 38px;
+        background-image:url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/d’Perfume.png);
+        @include hidetext;
+        cursor: pointer;
+        // margin: 9px 0;
+        @include pad{
+            margin: 9px 0;
+        }
+    }
+    
+    .menu{
+        display: flex;
+        // @include pad{
+        //     padding: 0;
+        // }
+        a{
+            padding:16px;
+            line-height: $lh-2;
+            font-weight: $fw-regular;
+            font-size: $fz-20;
+            color: $gray;
+            position: relative;
+            &:hover{
+                color:$gold;
+            }
+            .material-icons{
+                margin-right:3px;
+                vertical-align: bottom;
+            }
+        }
+        li:nth-child(4){
+            a{
+                padding-right: 0;
+            }
+        }
+    }  
+    //漢堡選單
+    @include pad{
+        .menu{
+            background:$gray;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            max-height: 0px;
+            overflow: hidden;
+            position: absolute;
+            z-index: 100;
+            transition: .5s;
+            top: 57px;
+            right: 0;
+            left: 0;
+            background: $gold;
+            li{
+                padding: 12px;
+                border-bottom: 2px solid $white;
+                a{
+                    color: $white;
+                    transition: all 0.3s;
+                    &:hover{
+                        color: $black;
+                    }
+                }
+            }
+        }
+        .active{
+            max-height: 550px;
+        }
+        .menu-pad{
+            display: flex;
+        }
+        .cart,.showmenu{
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+        .cart{
+            color: $gray;
+            position: relative;
+            margin-right: 20px;
+        }
+        .material-icons{
+            font-size: $fz-20;
+        }
+        em{
+            line-height: 1.17;
+            font-size: $fz-12;
+            position: absolute;
+            top: -20%;
+            right: -30%;
+            padding: 0px 4px;
+            border-radius: 7px;
+            background-color: $bg-brown;
+            color: $white;
+            text-align: center;
+        }
+    }  
+}
+//頁首背景
+.banner{
+    background: url(../images/banner.jpg) no-repeat;    
+    background-position: center center;
+    background-size: cover;
+    height: 870px;
+    margin-bottom: 60px;
+    @include pad{
+        height: 600px; 
+    }
+    @include phone{
+        background: url(../images/index1-1.jpg) no-repeat;
+        background-position: center center;
+        background-size: cover;
+        margin-bottom: 40px;
+        height: 480px;
+        
+    }
+    .container{
+        position: relative;
+    }
+    .textBlock{
+        color: $white;
+        position: absolute;
+        top: 295px;
+        right: 0;
+        max-width: 445px;
+        @include pad{
+            top: 101px;
+            padding: 0 15px;
+        }
+        h1{
+            font-size: $fz-5;
+            font-weight: $fw-bold;
+            @include phone{
+                font-size: $fz-4;
+            }
+        }
+        p{
+            font-size: $fz-3;
+            font-weight: $fw-regular;
+            @include phone{
+                font-size: $fz-20;
+            }
+        }
+        .bannerBtn{
+            width: 79%;
+            height: 60px;
+            color: $white;
+            background: transparent;
+            font-size: $fz-28;
+            font-weight: $fw-medium;
+            margin-top: 16px;
+            padding: 10px 0;
+            border: 2px solid $white;
+            border-radius: 30px;
+            @include pad{
+               width: 100%;
+            }
+            &:hover{
+                background: #FFFFFF4D;
+            }
+        }
+    }
+}
+//頁尾
+.footer{
+    background: $bg-brown;
+    padding-top: 20px;
+    padding-bottom: 22px;
+    .footerContent{
+        color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .footerInformation{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            @include pad{
+                width: 100%;
+                justify-content: space-between;
+            }
+            @include phone5{
+                flex-direction: column;
+            }
+            .footerLogo{
+                width: 128px;
+                height: 38px;
+                background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/d’Perfumewhite.png?raw=true);
+                background-repeat: no-repeat;
+                @include hidetext;
+                cursor: pointer;
+            }
+            span{
+                font-size: $fz-14;
+                margin-left: 20px;
+                @include pad{
+                    margin-left: 0;
+                }
+            }
+        }
+        .footerWebLink{
+            display: flex;
+            a{
+                font-size: $fz-20;
+                padding: 0px 18px;
+                color: $white;
+                &:hover{
+                    color:$black;
+                }
+            }
+            li{
+                @include pad{
+                    display: none;
+                }
+            }
+        }
+    }
+
+}

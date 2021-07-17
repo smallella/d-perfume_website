@@ -1,0 +1,331 @@
+//產品介紹
+.productIntro{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    margin-bottom: 60px;
+    @include phone{
+        margin-bottom: 40px;
+    }
+    .productContent{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        height: 555px;
+        @include pc{
+            height: 380px;
+        }
+        @include pad{
+            height: auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-bottom: 32px;
+        }
+    }
+    .productContent4{
+        height: 1080px;
+        @include pad{
+            height: auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    }
+    .rowReverse{
+        flex-direction: row-reverse;
+        @include phone{
+            flex-direction: column;
+        }
+    }
+    .productImg{
+        width: 50%;
+        background-position: center;
+        background-size: cover;
+        @include pad{
+            width: 100%;
+            height: 600px;
+        }
+        @include phone{
+           height: 350px;
+        }
+    }
+    .img1{
+        background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index2.jpg?raw=true);
+    }
+    .img2{
+        background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index3.png?raw=true);
+    }
+    .img3{
+        background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index4.jpg?raw=true);
+        background-position:left;
+    }
+    .img4{
+        background-image: url(https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index5.jpg?raw=true);
+        @include pad{
+            height: 680px;
+        }
+    }
+    .productText{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 105px;
+        @include pc{
+            padding: 0 65px;
+        }
+        @include pad{
+            width: 100%;
+            padding: 0;
+        }
+        h2{
+            font-size: $fz-4;
+            font-weight: $fw-bold;
+            @include phone{
+                margin-bottom: 0;
+            }
+        }
+        p{
+            font-size: $fz-20;
+            font-weight: $fw-regular;
+            
+            @include phone{
+                font-size: $fz-20;
+                margin-bottom: 8px;
+            }
+        }
+        a{
+            color: $gold;
+            font-family: $fontPF;
+            font-weight: $fw-semibold;
+            &:hover{
+                color:#000000c4;
+            }
+        }
+    }
+    .productText4{
+        h3{
+            font-size: $fz-3;
+            font-weight: $fw-semibold;
+            margin-bottom: 4px;
+        }
+        p{
+            font-size: $fz-2;
+            font-weight: $fw-light;
+            margin-bottom: 52px;
+            @include phone{
+                margin-bottom: 20px;
+            }
+        }
+        .trainBtn{
+            width: 350px;
+            height: 60px;
+            font-size: $fz-20;
+            font-weight: $fw-medium;
+            margin-top: 16px;
+            padding: 16px 0;
+            border: 2px solid $black;
+            border-radius: 30px;
+            background: $white;
+            @include pc{
+                width: 250px;
+                font-size: $fz-2;
+            }
+            @include pad{
+                width: 100%;
+            }
+            &:hover{
+                background: $bg-lightgray;
+                opacity: 1;
+            }
+        }
+    }
+}
+//主打產品
+.topProduct{
+    background: $bg-lightgray;
+    padding: 40px 15px;
+    display: flex;
+    justify-content: space-between;
+    @include pad{
+        flex-direction: column;
+    }
+    @include phone{
+        padding-top: 40px;
+    }
+    .topProductContent{
+        display: flex;
+        flex-direction: column;
+        @include pad{
+            margin-bottom: 32px;
+         }
+        .topProductImg{
+            width: 350px;
+            height: 540px;
+            margin-bottom: 8px;
+            @include pad{
+                width: 100%;
+               
+            }
+            @include phone{
+                width: 344px;
+                height: 350px;
+            }
+        }
+        h3{
+            font-size: $fz-3;
+            font-weight: $fw-semibold;
+        }
+        h4{
+            @include phone{
+               margin-bottom: 4px;
+            }
+        }
+        h4,span{
+            font-weight: $fw-light;
+        }
+        span{
+            color: $gray;
+            text-decoration: line-through;
+            margin-left: 6px;
+        }
+        .filterGray{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            h4{
+                font-size: $fz-3;
+                font-weight: $fw-semibold;
+                color: $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    
+    }
+}
+//產品回收
+.productRecycle{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 15px;
+    @include pad{
+        flex-direction: column;
+    }
+    @include phone{
+        padding: 40px 15px;
+    }
+    .recycleProductImg{
+        width: 65%;
+        height: 520px;
+        background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index9.jpg?raw=true);
+        background-size: cover;
+        background-position: center;
+        @include pad{
+            width: 100%;
+        }
+    }
+    .productRecycleContent{
+        padding: 82px 0px;
+        width: 30%;
+        font-size: $fz-20;
+        font-weight: $fw-light;
+        @include pad{
+            width: 100%;
+        }
+        @include phone{
+            padding: 0;
+        }
+        h2{
+            font-size: $fz-4;
+            font-weight: $fw-bold;
+            @include pc{
+                font-size: $fz-3;
+            }
+            @include phone{
+                font-size: $fz-4;
+            }
+        }
+        p{
+            font-size: $fz-2;
+        }
+        h3,p{
+            @include phone{
+                margin-bottom: 8px;
+            }
+        }
+        a{
+            font-size: $fz-2;
+            color: $gold;
+            font-family: $fontPF;
+            font-weight: $fw-semibold;
+            &:hover{
+                color:#000000c4;
+            }
+        }
+    }
+}
+//訂閱
+.subscribe{
+    font-weight: $fw-medium;
+    color: $gray;
+    background-image:url(../images/subscribe.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include phone{
+        background-image:url(../images/subscribe_sm.jpg);
+    }
+    .contactInformation{
+        padding-top: 312px;
+        padding-bottom: 112px;
+        padding-left: 21%;
+        font-size: $fz-4;
+        font-family:$fontPF;
+        font-weight: $fw-semibold;
+        @include pad{
+            padding-left: 10%;
+        }
+        @include phone{
+            padding-left: 3%;
+        }
+    }
+    h2{
+        margin-bottom: 20px;
+        @include phone{
+            font-size: $fz-4;
+        }
+    }
+    .subscribeBar{
+        display: flex;
+        input{
+            width: 219px;
+            padding: 0px 15px;
+            border: 2px solid $brown;
+            border-radius: 4px 0px 0px 4px;
+            background-color: #FFFFFF;
+            color: $gray;
+            @include pad{
+                width: 100%;
+            }
+        }
+        button{
+            border: none;
+            background: #916000;
+            color: white;
+            padding: 20px 26px;
+            border-radius: 0px 4px 4px 0px;
+            cursor: pointer;
+            &:hover{
+                background:$bg-darkbrown;
+                color: $gold;
+            }
+        }
+    }
+    
+}

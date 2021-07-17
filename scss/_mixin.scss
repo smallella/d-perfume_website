@@ -1,0 +1,31 @@
+//圖片取代文字隱藏文字
+@mixin hidetext{
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+//breakpoint
+@mixin pc{
+    @media(max-width: 1200px){
+        @content;
+    }
+}
+//pad 767以下套用
+
+@mixin pad{
+    @media(max-width: 767px){
+        @content;
+    }
+}
+//phone 376以下套用
+@mixin phone{
+    @media(max-width: 376px){
+        @content;
+    }
+}
+//phone 320以下套用
+@mixin phone5{
+    @media(max-width: 320px){
+        @content;
+    }
+}

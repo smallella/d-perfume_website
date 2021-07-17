@@ -1,0 +1,60 @@
+//tag default
+*,*::after,*::before{
+	box-sizing: border-box;
+}
+img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+body {
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+  }
+.d-none-pc{
+    display: none;
+    @include pad{
+        display: block;
+    }
+}
+.d-none-phone{
+    @include pad{
+        display: none;
+    }
+}
+.container{
+	max-width: 1140px;
+	padding: 0px 15px;
+    margin: 0 auto;
+	@include phone{
+		max-width: 375px;
+	}
+}
+a{
+    display: block;
+	text-decoration: none;
+    &:hover{
+		transition: .5s;
+        color: $gold;
+	}
+}
+span.label{
+	line-height:1.2;
+}
+.position-relative{
+	position: relative;
+}
+.row{
+	flex-direction: row;
+	@include phone{
+		flex-direction: column;
+	}
+}
+.mb1{
+	margin-bottom: 8px;
+}
+.mb2{
+	margin-bottom: 16px;
+}
+
